@@ -4,7 +4,7 @@
 let hours = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.'];
 
 
-function Hours() {
+function storeHours() {
   let hoursTable = document.querySelector('table');
   let tab = document.createElement('thead');
   let th = document.createElement('th');
@@ -22,7 +22,7 @@ function Hours() {
   tab.appendChild(tr);
   hoursTable.appendChild(tab);
 }
-Hours();
+storeHours();
 
 function StoreSales(name, min, max, avg, salesByHourArray, dailyTotal) {
   this.name = name;
@@ -95,26 +95,30 @@ paris.renderTable();
 lima.render();
 lima.renderTable();
 
+let cookiesPerHour = [];
 
 function footer() {
   let footerTable = document.querySelector('table');
   let tab = document.createElement('tfoot');
   let th = document.createElement('th');
-  th.textContent = '';
+  th.textContent = 'Global Sales Per Hour';
   let tr = document.createElement('tr');
   tr.appendChild(th);
-  for (let i = 1; i < hours.length; i++) {
-    let tr = document.createElement('tr');
-    let td = document.createElement('td');
-    tr.appendChild(td);
-    for (let i = 0; i < hours.length; i++) {
-      let td = document.createElement('td');
-      td.textContent = storeArray[i];
-      tr.appendChild(td);
+  let dailyGlobalTotal = 0;
+  // I am selecting index of the hours array
+  for (let i = 0; i < hours.length; i++) {
+    let globalCookieSalesPerHour = 0;
+    for (let j = 0; j < storeArray.length; j++) {
+      globalCookieSalesPerHour += storeArray[j].salesByHourArray[i];
     }
+    cookiesPerHour[i] = globalCookieSalesPerHour;
+    dailyGlobalTotal += globalCookieSalesPerHour;
+    let td = document.createElement('td');
+    td.textContent = cookiesPerHour[i];
+    tr.appendChild(td);
   }
   let td = document.createElement('td');
-  td.textContent = 'Daily Cookie Sales';
+  td.textContent = dailyGlobalTotal;
   tr.appendChild(td);
   tab.appendChild(tr);
   footerTable.appendChild(tab);
