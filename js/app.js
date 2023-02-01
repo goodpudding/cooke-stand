@@ -3,12 +3,11 @@
 // Setting up Hours
 let hours = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.'];
 
-
 function storeHours() {
   let hoursTable = document.querySelector('table');
   let tab = document.createElement('thead');
   let th = document.createElement('th');
-  th.textContent = '';
+  th.textContent = 'City Names';
   let tr = document.createElement('tr');
   tr.appendChild(th);
   for (let i = 0; i < hours.length; i++) {
