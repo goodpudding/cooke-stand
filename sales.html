@@ -38,6 +38,26 @@
   </header>
   <main>
     <h1>Cookie Sales</h1>
+    <form>
+      <fieldset>
+        <legend> Add Cookie Sales</legend>
+        <!-- name, min, max, avg, salesByHourArray, dailyTotal -->
+        <label>Store Name
+          <input id="newStoreName" type="text" name="newStoreNamename" required>
+        </label>
+        <label>Min. # of Customers per hour
+          <input id="newStoreMin" type="number" name="newStoreMinName" required>
+        </label>
+        <label>Max. # of Customers per hour
+          <input id="newStoreMax" type="number" name="newStoreMaxName" required>
+        </label>
+        <label>Avg. # of Cookies per Customer
+          <input id="newStoreAvg" type="number" step=".1" name="newStoreAvgName" required>
+        </label>
+
+      </fieldset>
+      <button type="submit">Add Store</button>
+    </form>
     <table class="tableData">
     </table>
   </main>
