@@ -1,12 +1,15 @@
-table, th, td {
+table,
+th,
+td {
   border: 1px solid;
 
 }
 
-h1{
+h1 {
   font-family: 'Public Sans', sans-serif;
   font-size: 4rem;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -15,38 +18,45 @@ header {
   background-color: antiquewhite;
   width: 100%;
 }
+
 nav {
   width: 960px;
   height: 70px;
   margin: auto;
 }
-.navContainer{
+
+.navContainer {
   /* border: 2px solid red; */
   display: flex;
   width: 100%;
-  justify-content:left;
+  justify-content: left;
   align-items: center;
 }
-.navButtons{
+
+.navButtons {
   /* border: 2px solid black; */
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 100%;
 }
-.navButtons li{
+
+.navButtons li {
   list-style: none;
 }
-fieldset{
+
+fieldset {
   border: 2px solid black;
   display: flex;
   width: 80%;
   margin: auto;
 }
-label{
-padding: 0 10px 0 10px;
+
+label {
+  padding: 10px 10px 0 10px;
 }
+
 main {
-  background-color: aquamarine;
+  background-color:rgb(193, 219, 253);
   width: 960px;
   margin: 30px auto 30px;
   display: flex;
@@ -73,15 +83,15 @@ article section {
   overflow: auto;
 
 }
-body{
+
+body {
   background-color: rgb(12, 10, 104);
 }
 
-.tableData
-{
+.tableData {
   font-size: 30px;
 }
+
 /* thead{
   white-space: nowrap;
 } */
-
