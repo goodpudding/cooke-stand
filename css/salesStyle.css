@@ -36,7 +36,15 @@ nav {
 .navButtons li{
   list-style: none;
 }
-
+fieldset{
+  border: 2px solid black;
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+label{
+padding: 0 10px 0 10px;
+}
 main {
   background-color: aquamarine;
   width: 960px;

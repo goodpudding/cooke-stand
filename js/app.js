@@ -23,20 +23,20 @@ function storeHours() {
 }
 storeHours();
 
-function StoreSales(name, min, max, avg, salesByHourArray, dailyTotal) {
+function StoreSales(name, min, max, avg) {
   this.name = name;
   this.min = min;
   this.max = max;
   this.avg = avg;
-  this.salesByHourArray = salesByHourArray;
-  this.dailyTotal = dailyTotal;
+  this.salesByHourArray = [];
+  this.dailyTotal = 0;
   this.calculateRandomNumberOfCustomers = function () {
     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
   };
   this.generateCookiesPerHour = function () {
     for (let i = 0; i < hours.length; i++) {
       let customers = this.calculateRandomNumberOfCustomers();
-      let cookiesSoldThisHour = Math.round(customers * this.avg);
+      let cookiesSoldThisHour = Math.round((customers +1) * this.avg);
       this.salesByHourArray.push(cookiesSoldThisHour);
       this.dailyTotal += cookiesSoldThisHour;
     }
@@ -75,11 +75,11 @@ StoreSales.prototype.renderTable = function () {
 };
 
 
-let seattle = new StoreSales('Seattle', 23, 65, 6.3, [], 0);
-let tokyo = new StoreSales('tokyo', 3, 24, 1.2, [], 0);
-let dubai = new StoreSales('Dubai', 11, 38, 3.7, [], 0);
-let paris = new StoreSales('Paris', 20, 38, 2.3, [], 0);
-let lima = new StoreSales('Lima', 2, 16, 4.6, [], 0);
+let seattle = new StoreSales('Seattle', 23, 65, 6.3);
+let tokyo = new StoreSales('tokyo', 3, 24, 1.2);
+let dubai = new StoreSales('Dubai', 11, 38, 3.7);
+let paris = new StoreSales('Paris', 20, 38, 2.3);
+let lima = new StoreSales('Lima', 2, 16, 4.6);
 
 let storeArray = [seattle, tokyo, dubai, paris, lima];
 
@@ -124,3 +124,22 @@ function footer() {
 }
 footer();
 
+let storeForm = document.querySelector('form');
+
+let submitStore = function (event) {
+  event.preventDefault();
+  let storeName = event.target.newStoreNamename.value;
+  let minCustomer = event.target.newStoreMinName.value;
+  let maxCustomer = event.target.newStoreMaxName.value;
+  let avgCustomer = event.target.newStoreAvgName.value;
+
+  // function StoreSales(name, min, max, avg,
+  let newStore = new StoreSales(storeName, minCustomer, maxCustomer, avgCustomer);
+  storeArray.push(newStore);
+  newStore.render();
+  newStore.renderTable();
+  document.querySelector('tfoot tr').remove();
+  footer();
+};
+
+storeForm.addEventListener('submit', submitStore);
