@@ -1,12 +1,15 @@
-table, th, td {
+table,
+th,
+td {
   border: 1px solid;
 
 }
 
-h1{
+h1 {
   font-family: 'Public Sans', sans-serif;
   font-size: 4rem;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -15,30 +18,34 @@ header {
   background-color: antiquewhite;
   width: 100%;
 }
+
 nav {
   width: 960px;
   height: 70px;
   margin: auto;
 }
-.navContainer{
+
+.navContainer {
   /* border: 2px solid red; */
   display: flex;
   width: 100%;
-  justify-content:left;
+  justify-content: space-between;
   align-items: center;
 }
-.navButtons{
+
+.navButtons {
   /* border: 2px solid black; */
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 100%;
 }
-.navButtons li{
+
+.navButtons li {
   list-style: none;
 }
 
 main {
-  background-color: aquamarine;
+  background-color: rgb(193, 219, 253);
   width: 960px;
   margin: 30px auto 30px;
   display: flex;
@@ -51,29 +58,81 @@ footer {
   height: 75px;
 }
 
-main img {
-  margin-bottom: 30px;
 
-}
 
 article {
   width: 450px;
 }
 
+article a {
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  color: brown;
+}
+
 article section {
   height: 320px;
   overflow: auto;
+  padding-top: 10px;
 
 }
-body{
+
+h3 {
+  font-size: 3rem;
+}
+
+body {
   background-color: rgb(12, 10, 104);
 }
-
-.tableData
-{
-  font-size: 35px;
-}
-thead{
-  white-space: nowrap;
+main img{
+  margin-bottom: 30px;
 }
 
+.thumb-item {
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+}
+.thumb-item__image {
+position: absolute;
+  width: 300px;
+  z-index: 0;
+}
+.thumb-item__info {
+  height: 375px;
+  width: 300px;
+  opacity:0;
+  margin-bottom: 30px;
+}
+.thumb-item__info h5 {
+  font-size: 60px;
+  margin: 0;
+  padding: 0;
+  font-family: tahoma;
+  font-weight: bold;
+  background-color:  beige;
+
+}
+.thumb-item__info ul li {
+  font-size: 45px;
+  margin: 4px 0 14px;
+  background-color:  beige;
+}
+.thumb-item:hover .thumb-item__info {
+
+  opacity: 1;
+}
+#textContainer1, #textContainer2, #textContainer3{
+  position: absolute;
+  width: 300px;
+  height: 375px;
+  z-index: 2;
+}
+#textContainer2 ul li {
+  font-size: 30px;
+}
