@@ -63,6 +63,9 @@ footer {
 article {
   width: 450px;
 }
+p{
+  font-family: 'Public Sans', sans-serif, Georgia, 'Times New Roman', Times, serif ;
+}
 
 article a {
   width: 150px;
@@ -80,10 +83,13 @@ article section {
   overflow: auto;
   padding-top: 10px;
 
+
 }
 
 h3 {
   font-size: 3rem;
+  font-family: 'Public Sans', sans-serif;
+  font-weight:bolder;
 }
 
 body {

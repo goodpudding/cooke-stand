@@ -57,7 +57,7 @@ label {
 
 main {
   background-color:rgb(193, 219, 253);
-  width: 960px;
+  width: 1080px;
   margin: 30px auto 30px;
   display: flex;
   justify-content: space-between;
@@ -67,6 +67,7 @@ main {
 footer {
   background-color: crimson;
   height: 75px;
+  position: fixed;
 }
 
 main img {
@@ -89,9 +90,12 @@ body {
 }
 
 .tableData {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 /* thead{
   white-space: nowrap;
 } */
+td{
+font-family: 'Public Sans', sans-serif, Arial, Helvetica, sans-serif;
+}
