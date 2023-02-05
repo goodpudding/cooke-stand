@@ -13,10 +13,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    .mySlides {display:none;}
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
 </head>
 
 <body>
@@ -36,10 +39,35 @@
         </div>
       </div>
     </nav>
-  </header>
-  <main class="container">
-    <img src="img/frosted-cookie.jpg" width="960" />
 
+</header>>
+
+
+<main class="container">
+    <!-- https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_rr -->
+      <div class="carousel" style="width: 960px height= 720px">
+      <img class="mySlides" src="./img/frosted-cookie.jpg" style="width: 960px;">
+      <img class="mySlides" src="./img/family.jpg" style="width:100%">
+      <img class="mySlides" src="./img/chinook.jpg" style="width:960px">
+    </div>
+
+    <script>
+      var myIndex = 0;
+      carousel();
+
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 3500); // Change image every 2 seconds
+      }
+    </script>
+    <!-- <img src="img/frosted-cookie.jpg" width="960" /> -->
     <!-- Here is a link to the code that I used to figure out how to do the hover over image in css. I know I can use hover as an event in js, but I wasnt sure what would happen to the text box, so I thought it would de easier using z-index instead.
         https://stackoverflow.com/questions/35641672/i-want-to-display-text-when-i-move-mouse-over-image-in-javascript -->
     <div class="thumb-item">
@@ -59,8 +87,8 @@
       </div>
     </div>
     <div class="thumb-item">
-      <img class="thumb-item__image" src="img/cutter.jpeg" alt="A cookie cutter in the shape of a Salmon"
-        width="300px" height="375px">
+      <img class="thumb-item__image" src="img/cutter.jpeg" alt="A cookie cutter in the shape of a Salmon" width="300px"
+        height="375px">
       <div class="thumb-item__info">
         <div id="textContainer2">
           <h5>Hours</h5>
@@ -77,8 +105,7 @@
       </div>
     </div>
     <div class="thumb-item">
-      <img class="thumb-item__image" src="img/shirt.jpg" alt="A salmon on a t-shirt"
-        width="300px" height="375px">
+      <img class="thumb-item__image" src="img/shirt.jpg" alt="A salmon on a t-shirt" width="300px" height="375px">
       <div class="thumb-item__info">
         <div id="textContainer2">
           <h5>Contact Info</h5>

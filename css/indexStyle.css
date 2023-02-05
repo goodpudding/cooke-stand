@@ -142,3 +142,9 @@ position: absolute;
 #textContainer2 ul li {
   font-size: 30px;
 }
+
+.carousel{
+  /* border: 2px solid black; */
+  width: 960px;
+  height: 560px;
+}
